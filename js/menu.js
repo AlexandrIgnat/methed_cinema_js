@@ -14,7 +14,7 @@ const navigationClose = document.querySelectorAll(closeTriger)
 
     burgerBtn.addEventListener('click', () => {
         openMenu(navigation, classActive);
-    }
+        }
     )
 
     navigationClose.forEach((item) => {
