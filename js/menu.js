@@ -8,9 +8,10 @@ const closeMenu  = (nav, active) => {
 }
 
 const slideMenu = ({openBtn, menu, classActive, closeTriger}) => {
-const burgerBtn = document.querySelector(openBtn);
-const navigation = document.querySelector(menu);
-const navigationClose = document.querySelectorAll(closeTriger)
+
+    const burgerBtn = document.querySelector(openBtn);
+    const navigation = document.querySelector(menu);
+    const navigationClose = document.querySelectorAll(closeTriger);
 
     burgerBtn.addEventListener('click', () => {
         openMenu(navigation, classActive);
@@ -19,7 +20,7 @@ const navigationClose = document.querySelectorAll(closeTriger)
 
     navigationClose.forEach((item) => {
         item.addEventListener('click', () => {
-            closeMenu(navigation, classActive)
+            closeMenu(navigation, classActive);
         })
     })
 

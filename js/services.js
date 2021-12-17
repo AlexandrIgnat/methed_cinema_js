@@ -25,7 +25,32 @@ const getData = url => fetch(url)
 
     .catch(err => console.error(err));
 
-export const getTriends = async(type = 'all', period = 'day', page = 1) => {
+export const getTriends = async (type = 'all', period = 'day', page = 1) => {
     const url = `${BASE_URL}trending/${type}/${period}?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
+    return await getData(url);
+}
+
+export const getTriends2 = async (type = 'all', period = 'day', page = 1) => {
+    const url = `${BASE_URL}trending/${type}/${period}?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
+    return await getData(url);
+}
+
+export const getTopMovie = async (type = 'movie', page = 1) => {
+    const url = `${BASE_URL}${type}/top_rated?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
+    return await getData(url);
+}
+
+export const getTopTv = async (type = 'tv', page = 1) => {
+    const url = `${BASE_URL}${type}/top_rated?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
+    return await getData(url);
+}
+
+export const getPopularMovie = async (type = 'movie', page = 1) => {
+    const url = `${BASE_URL}${type}/popular?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
+    return await getData(url);
+}
+
+export const getPopularTv = async (type = 'tv', page = 1) => {
+    const url = `${BASE_URL}${type}/popular?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
     return await getData(url);
 }
