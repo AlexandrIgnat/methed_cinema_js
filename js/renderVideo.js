@@ -16,7 +16,7 @@ const firstRender = data => {
 }
 
 const renderVideo = async () => {
-    const data = await getTriends('all', 'week', 1);
+    const data = await getTriends('movie', 'week', 1);
     const [firstCard, ...otherCards] = data.results;
     firstRender(firstCard);
     otherCards.length = 10;
