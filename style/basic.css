@@ -25,11 +25,11 @@ body {
 [data-tooltip]::after {
     content: attr(data-tooltip); /* Выводим текст */
     position: absolute; /* Абсолютное позиционирование */
-    width: 600px; /* Ширина подсказки */
+    max-width: 500px; /* Ширина подсказки */
     left: 0; top: 0; /* Положение подсказки */
     font-size: 16px;
     border-radius: 10px;
-    background: rgb(0, 35, 66); /* Синий цвет фона */
+    background: rgba(0, 35, 66, .4); /* Синий цвет фона */
     color: var(--color-text); /* Цвет текста */
     padding: 0.5em; /* Поля вокруг текста */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
@@ -39,7 +39,7 @@ body {
    } 
 [data-tooltip]:hover::after {
     opacity: 1; /* Показываем подсказку */
-    top: -270px; /* Положение подсказки */
+    top: -290px; /* Положение подсказки */
    }
 
 img {
@@ -84,6 +84,9 @@ input[type="search" i]::-webkit-search-cancel-button{
     body {
         padding-top: 30px;
     }
+    [data-tooltip]:hover::after {
+        font-size: 6px;
+    }
 }
 @media (max-width: 480px) {
     body {
@@ -93,4 +96,6 @@ input[type="search" i]::-webkit-search-cancel-button{
     .container {
         padding: 0 15px;
     }
+
+    
 }

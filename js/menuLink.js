@@ -4,14 +4,12 @@ import {
     getTopTv,
     getPopularMovie,
     getPopularTv,
-    getTriends2, 
 } from './services.js';
 import renderCards from './renderOtherCard.js';
 
 const title = document.querySelector('.other-films__title');
 const filmWeek = document.querySelector('.film-week');
 const getNav = document.querySelectorAll('.get-nav');
-console.log(getNav);
 
 const menuLink = () => {
     getNav.forEach(nav => {
@@ -26,9 +24,7 @@ const menuLink = () => {
                 title.textContent = target.textContent;
 
                 if (target.classList.contains('get-nav__link_triends')) {
-                    // getTriends2()
-                    // .then(data => data.results)
-                    renderTrendsCards();
+                    renderTrendsCards(11);
                 }
                 if (target.classList.contains('get-nav__link_top-movies')) {
                     renderTopMovieCards(20, 1);
@@ -47,8 +43,8 @@ const menuLink = () => {
     })
 };
 
-const renderTrendsCards = async (cards = 12, page = 1) => {
-    const data = await getTriends2('all','week', page);
+const renderTrendsCards = async (cards = 12, page = 2) => {
+    const data = await getTriends('all','week', page);
     const [...otherCards] = data.results;
     otherCards.length = cards;
     renderCards(otherCards);

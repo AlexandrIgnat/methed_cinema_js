@@ -30,11 +30,6 @@ export const getTriends = async (type = 'all', period = 'day', page = 1) => {
     return await getData(url);
 }
 
-export const getTriends2 = async (type = 'all', period = 'day', page = 1) => {
-    const url = `${BASE_URL}trending/${type}/${period}?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
-    return await getData(url);
-}
-
 export const getTopMovie = async (type = 'movie', page = 1) => {
     const url = `${BASE_URL}${type}/top_rated?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
     return await getData(url);
@@ -54,3 +49,17 @@ export const getPopularTv = async (type = 'tv', page = 1) => {
     const url = `${BASE_URL}${type}/popular?api_key=${APY_KEY}${LANGUAGE}&page=${page}`;
     return await getData(url);
 }
+
+export const getVideo = async (id, type) => {
+    const url = `${BASE_URL}${type}/${id}/videos?api_key=${APY_KEY}${LANGUAGE}`;
+    return await getData(url);
+}
+
+export const search = async (query, page) => {
+    const url = `${BASE_URL}search/multi?api_key=${APY_KEY}${LANGUAGE}` +
+    `&page=${page}&include_adult=false&query=${query}`;
+    return await getData(url);
+}
+
+// https://api.themoviedb.org/3/search/multi?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
+// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US

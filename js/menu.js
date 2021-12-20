@@ -5,7 +5,7 @@ const openMenu = (nav, active) => {
 
 const closeMenu  = (nav, active) => {
     nav.classList.remove(active);
-}
+};
 
 const slideMenu = ({openBtn, menu, classActive, closeTriger}) => {
 
